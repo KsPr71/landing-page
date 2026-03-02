@@ -9,7 +9,8 @@ export async function connectToDatabase() {
   if (!client) {
     client = new MongoClient(uri);
     await client.connect();
-    db = client.db('landing-page'); // nombre de tu BD
+    // Usa la base de datos NovaDevProducts
+    db = client.db('NovaDevProducts');
   }
   return { db };
 }
