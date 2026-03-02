@@ -1,9 +1,6 @@
 // api/seed-products.ts
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-// Nota: importamos con extensión .js para que Node ESM en Vercel resuelva correctamente el módulo compilado
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import { connectToDatabase } from './db.js';
+import { connectToDatabase } from './db';
 import { products } from '../data/products';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
