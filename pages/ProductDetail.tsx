@@ -82,9 +82,16 @@ export default function ProductDetail() {
                 {product.tagline}
               </p>
             </div>
-            <button className="px-8 py-4 rounded-full bg-accent text-white font-semibold hover:bg-accent/90 transition-all shadow-[0_0_20px_rgba(56,189,248,0.2)] whitespace-nowrap">
-              Solicitar Demo
-            </button>
+            {product.url_descarga && (
+              <a
+                href={product.url_descarga}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 rounded-full bg-accent text-white font-semibold hover:bg-accent/90 transition-all shadow-[0_0_20px_rgba(56,189,248,0.2)] whitespace-nowrap"
+              >
+                Descargar
+              </a>
+            )}
           </div>
         </motion.div>
 

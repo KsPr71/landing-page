@@ -7,6 +7,7 @@ export interface Product {
   imageUrl: string;
   category: string;
   technologies: string[];
+  url_descarga?: string;
 }
 
 export const products: Product[] = [
@@ -17,9 +18,9 @@ export const products: Product[] = [
     description: "Por el Barrio es mucho más que una aplicación: es el directorio vivo de tu comunidad. Hemos creado un espacio digital que recopila y organiza todos los comercios, tiendas, servicios y emprendimientos que dan vida a los barrios",
     features: [
       "Pipeline sitios relevantes",
-      "Automatización de correos electrónicos y seguimientos",
-      "Analíticas predictivas de cierre de ventas",
-      "Integración nativa con herramientas de calendario y mail"
+      "Incorporacion de informacion de Google Maps",
+      "Gestion de horarios de apertura y cierre",
+      "Integracion con opiniones de los clientes"
     ],
     imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426&ixlib=rb-4.0.3",
     category: "SaaS / Empresarial",
