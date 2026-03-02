@@ -11,12 +11,12 @@ export interface Product {
 
 export const products: Product[] = [
   {
-    id: "nova-crm",
-    title: "NovaCRM",
-    tagline: "Gestión de clientes inteligente para equipos de alto rendimiento.",
-    description: "NovaCRM centraliza toda la comunicación con tus clientes, automatiza el seguimiento de ventas y proporciona analíticas predictivas impulsadas por IA para cerrar más tratos en menos tiempo. Diseñado específicamente para empresas B2B que buscan escalar sus operaciones comerciales sin fricción.",
+    id: "el-barrio",
+    title: "Por el Barrio",
+    tagline: "Aplicacion para la informacion de sitios de interes",
+    description: "Por el Barrio es mucho más que una aplicación: es el directorio vivo de tu comunidad. Hemos creado un espacio digital que recopila y organiza todos los comercios, tiendas, servicios y emprendimientos que dan vida a los barrios",
     features: [
-      "Pipeline de ventas visual y personalizable",
+      "Pipeline sitios relevantes",
       "Automatización de correos electrónicos y seguimientos",
       "Analíticas predictivas de cierre de ventas",
       "Integración nativa con herramientas de calendario y mail"
