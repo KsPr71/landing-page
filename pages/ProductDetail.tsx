@@ -1,17 +1,42 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, CheckCircle2, Code2 } from 'lucide-react';
-import { products } from '../data/products.ts';
+import type { Product } from '../data/products.ts';
 
 export default function ProductDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const product = products.find(p => p.id === id);
+  const [product, setProduct] = useState<Product | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    if (!id) return;
+
+    fetch('/api/products')
+      .then((res) => res.json())
+      .then((data: Product[]) => {
+        const found = data.find((p) => p.id === id);
+        setProduct(found ?? null);
+      })
+      .catch((error) => {
+        console.error('Error fetching product', error);
+        setProduct(null);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, [id]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen pt-32 pb-24 flex items-center justify-center text-center px-6">
+        <p className="text-gray-400">Cargando producto...</p>
+      </div>
+    );
+  }
 
   if (!product) {
     return (

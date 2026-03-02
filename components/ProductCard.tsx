@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { Product } from '../data/products.ts';
+import type { Product } from '../data/products.ts';
 
 interface ProductCardProps {
   product: Product;
