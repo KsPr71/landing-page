@@ -28,8 +28,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const db = client.db('NovaDevProducts');
     const collection = db.collection('products');
 
-    await collection.deleteMany({});
-    await collection.insertMany(products);
+    await collection.bulkWrite(
+      products.map((product) => ({
+        updateOne: {
+          filter: { id: product.id },      // buscar por id del producto
+          update: { $set: product },       // sobrescribir campos con los nuevos datos
+          upsert: true,                    // si no existe, lo crea
+        },
+      }))
+    );
 
     return res.status(200).json({ inserted: products.length });
   } catch (error) {
