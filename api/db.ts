@@ -13,8 +13,9 @@ export async function connectToDatabase() {
     }
 
     client = new MongoClient(uri, {
-      // Evita el error TLS "tlsv1 alert internal error" en Vercel/serverless (selección IPv4/IPv6)
+      // Evita el error TLS "tlsv1 alert internal error" en Vercel/serverless
       autoSelectFamily: false,
+      family: 4, // Forzar IPv4
     });
     await client.connect();
     db = client.db('NovaDevProducts');
