@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Terminal, Layers, Zap } from 'lucide-react';
 import ProductCard from '../components/ProductCard.tsx';
-import { products } from '../data/products.ts';
+import type { Product } from '../data/products.ts';
 import Logo from '../components/Logo.tsx';
 
 export default function Home() {
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    fetch('/api/products')
+      .then((res) => res.json())
+      .then((data: Product[]) => setProducts(data))
+      .catch((error) => {
+        console.error('Error fetching products', error);
+      });
+  }, []);
+
   const featuredProducts = products.slice(0, 2);
 
   return (
