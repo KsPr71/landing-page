@@ -1,4 +1,5 @@
 import React from 'react';
+import logoSrc from '../assets/logo2.png';
 
 type LogoProps = {
   width: number;
@@ -7,10 +8,9 @@ type LogoProps = {
 
 const Logo: React.FC<LogoProps> = ({ width, height }) => {
   return (
-    <div >
+    <div>
       <img
-        
-        src="./assets/logo2.png"
+        src={logoSrc}
         alt="Logo"
         width={width}
         height={height}
