@@ -12,7 +12,10 @@ export async function connectToDatabase() {
       throw new Error('MONGODB_URI environment variable is not set');
     }
 
-    client = new MongoClient(uri);
+    client = new MongoClient(uri, {
+      // Evita el error TLS "tlsv1 alert internal error" en Vercel/serverless (selección IPv4/IPv6)
+      autoSelectFamily: false,
+    });
     await client.connect();
     db = client.db('NovaDevProducts');
   }
