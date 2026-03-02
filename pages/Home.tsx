@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Terminal, Layers, Zap } from 'lucide-react';
 import ProductCard from '../components/ProductCard.tsx';
 import { products } from '../data/products.ts';
+import Logo from '../components/Logo.tsx';
 
 export default function Home() {
   const featuredProducts = products.slice(0, 2);
@@ -14,14 +15,17 @@ export default function Home() {
       <section className="relative max-w-7xl mx-auto px-6 md:px-8 py-20 md:py-32 flex flex-col items-center text-center">
         {/* Background glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/20 rounded-full blur-[120px] -z-10 opacity-50 pointer-events-none" />
-        
+        <Logo width={180} height={180} />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 mb-8"
         >
-          <span className="flex h-2 w-2 rounded-full bg-accent animate-pulse"></span>
+          <span className="flex h-2 w-2 rounded-full bg-accent animate-pulse">
+
+         
+          </span>
           Software Engineering Studio
         </motion.div>
         

@@ -37,7 +37,7 @@ const Header = () => {
             <Code2 className="w-6 h-6 text-accent" />
           </div>
           <span className="font-heading font-bold text-xl tracking-tight text-white">
-            Nova Dev<span className="text-accent">.</span>
+            Nova Dev<span className="text-accent"></span>
           </span>
         </Link>
 
