@@ -1,6 +1,8 @@
 // api/products.ts
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { connectToDatabase } from './db';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import { connectToDatabase } from './db.js';
 import type { Product } from '../data/products';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
