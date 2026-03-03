@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Code2, Github, Twitter, Linkedin } from 'lucide-react';
+import { Code2, Phone, MessageCircle, Facebook } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -20,14 +20,14 @@ const Footer = () => {
               Transformamos ideas complejas en soluciones de software elegantes, escalables y orientadas al rendimiento.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-white/10 hover:text-white transition-all">
-                <Github className="w-5 h-5" />
+              <a href="https://wa.me/5356931759" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-white/10 hover:text-white transition-all" aria-label="WhatsApp">
+                <MessageCircle className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-white/10 hover:text-white transition-all">
-                <Twitter className="w-5 h-5" />
+              <a href="tel:+5356931759" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-white/10 hover:text-white transition-all" aria-label="Teléfono">
+                <Phone className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-white/10 hover:text-white transition-all">
-                <Linkedin className="w-5 h-5" />
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-white/10 hover:text-white transition-all" aria-label="Facebook">
+                <Facebook className="w-5 h-5" />
               </a>
             </div>
           </div>

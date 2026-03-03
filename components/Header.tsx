@@ -55,7 +55,7 @@ const Header = () => {
             </Link>
           ))}
           <a
-            href="mailto:hello@novadev.com"
+            href="mailto:novadev2026@gmail.com"
             className="px-5 py-2.5 rounded-full bg-white text-background font-medium text-sm hover:bg-gray-200 transition-colors"
           >
             Contactar
@@ -94,7 +94,7 @@ const Header = () => {
                 </Link>
               ))}
               <a
-                href="mailto:hello@novadev.com"
+                href="mailto:novadev2026@gmail.com"
                 className="mt-4 px-6 py-3 rounded-lg bg-accent text-white font-medium text-center hover:bg-accent/90 transition-colors"
               >
                 Contactar
