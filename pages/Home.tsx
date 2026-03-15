@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Terminal, Layers, Zap } from 'lucide-react';
-import ProductCard from '../components/ProductCard.tsx';
-import type { Product } from '../data/products.ts';
+import { ArrowRight, Layers, Terminal, Zap } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Logo from '../components/Logo.tsx';
+import ProductCard from '../components/ProductCard.tsx';
+import { TeamCarousel } from "../components/lightswind/team-carousel.tsx";
+import type { Product } from '../data/products.ts';
+import teamMembers from './data.tsx';
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -19,6 +21,7 @@ export default function Home() {
   }, []);
 
   const featuredProducts = products.slice(0, 2);
+
 
   return (
     <div className="pt-24 pb-16">
@@ -144,6 +147,39 @@ export default function Home() {
           {featuredProducts.map((product, index) => (
             <ProductCard key={product.id} product={product} index={index} />
           ))}
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-10 border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-6 md:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <p className="text-2xl md:text-2xl font-heading font-bold text-white mb-4">
+              Equipo de
+            </p>
+            <h2 className="text-3xl md:text-5xl font-heading font-bold text-blue-600 mb-4">
+              NOVADEV
+            </h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Conoce al equipo que diseña y construye nuestros productos.
+            </p>
+          </motion.div>
+
+          <TeamCarousel
+            members={teamMembers}
+            title=""
+            embedded
+            autoPlay={3000}
+            onMemberChange={(member) => {
+              console.log('Active member:', member.name);
+            }}
+          />
         </div>
       </section>
       
