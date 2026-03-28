@@ -422,13 +422,13 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({
                   {/* Overlay Info */}
                   {infoPosition === 'overlay' && (
                     <div
-                      className="absolute bottom-0 left-0 right-0 p-4 text-center"
+                      className="absolute bottom-0 left-0 right-0 p-2 text-center"
                       style={{
                         background: infoBackground || "linear-gradient(transparent, rgba(0,0,0,0.8))",
                         color: infoTextColor,
                       }}
                     >
-                      <h3 className="text-lg font-bold">{member.name}</h3>
+                      <h2 className="text-sm font-bold">{member.name}</h2>
                       <p className="text-sm opacity-90">{member.role}</p>
                     </div>
                   )}
@@ -449,7 +449,7 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({
           transition={{ duration: 0.3 }}
           className="text-center mt-10"
         >
-          <h3
+          <h5
             className="text-4xl font-bold mb-3 relative inline-block"
             style={{ color: infoTextColor }}
           >
@@ -458,7 +458,7 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({
               className="absolute top-full left-0 w-full h-0.5 mt-2"
               style={{ background: infoSeparator}}
             />
-          </h3>
+          </h5>
           <p
             className="text-xl font-medium opacity-80 uppercase tracking-wider"
             style={{ color: infoBackgroundColor }}

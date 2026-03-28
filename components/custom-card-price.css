@@ -1,0 +1,32 @@
+.custom-card-price {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 20;
+    border-bottom-left-radius: 18px;
+    background: #f7f7f2;
+  }
+  
+  .custom-card-price::before,
+  .custom-card-price::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: transparent;
+  }
+  
+  .custom-card-price::before {
+    top: 0;
+    right: 100%;
+    border-top-right-radius: 18px;
+    box-shadow: 8px -8px 0 8px #f7f7f2;
+  }
+  
+  .custom-card-price::after {
+    top: 100%;
+    right: 0;
+    border-top-right-radius: 18px;
+    box-shadow: 8px -8px 0 8px #f7f7f2;
+  }
+  

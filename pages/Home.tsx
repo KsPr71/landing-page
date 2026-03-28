@@ -7,7 +7,6 @@ import ProductCard from '../components/ProductCard.tsx';
 import { TeamCarousel } from "../components/lightswind/team-carousel.tsx";
 import type { Product } from '../data/products.ts';
 import teamMembers from './data.tsx';
-
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
 
@@ -181,6 +180,10 @@ export default function Home() {
             }}
           />
         </div>
+      </section>
+      <section>
+        
+
       </section>
       
       {/* CTA Section */}
