@@ -157,15 +157,17 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-12"
+            className="mb-12 text-left"
           >
-            <p className="text-2xl md:text-2xl font-heading font-bold text-white mb-4">
-              Equipo de
-            </p>
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-blue-600 mb-4">
-              NOVADEV
-            </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            <div className="flex items-baseline gap-3 md:gap-4 mb-4 whitespace-nowrap">
+              <p className="text-2xl md:text-3xl font-heading font-bold text-white">
+                Equipo de
+              </p>
+              <h2 className="text-3xl md:text-5xl font-heading font-bold text-blue-600">
+                NOVADEV
+              </h2>
+            </div>
+            <p className="text-gray-400 text-lg max-w-2xl">
               Conoce al equipo que diseña y construye nuestros productos.
             </p>
           </motion.div>
@@ -182,7 +184,7 @@ export default function Home() {
         </div>
       </section>
       <section>
-        
+   
 
       </section>
       

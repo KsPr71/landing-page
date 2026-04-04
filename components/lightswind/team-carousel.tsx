@@ -83,8 +83,8 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({
   titleSize = "2xl",
   titleColor = "rgba(0, 76, 255, 1)",
   background,
-  cardWidth = 280,
-  cardHeight = 380,
+  cardWidth = 240,
+  cardHeight = 330,
   cardRadius = 20,
   showArrows = true,
   showDots = true,
@@ -94,7 +94,7 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({
   autoPlay = 0,
   pauseOnHover = true,
   visibleCards = 2,
-  sideCardScale = 0.9,
+  sideCardScale = 0.88,
   sideCardOpacity = 0.8,
   grayscaleEffect = true,
   className,
@@ -162,7 +162,7 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({
         return {
           zIndex: 10,
           opacity: 1,
-          scale: 1.1,
+          scale: 1.05,
           x: 0,
           filter: 'grayscale(0%)',
           pointerEvents: 'auto',
@@ -301,11 +301,11 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({
   };
 
   const titleSizeClasses = {
-    sm: 'text-4xl',
-    md: 'text-5xl',
-    lg: 'text-6xl',
-    xl: 'text-7xl',
-    '2xl': 'text-8xl',
+    sm: 'text-3xl',
+    md: 'text-4xl',
+    lg: 'text-5xl',
+    xl: 'text-6xl',
+    '2xl': 'text-7xl',
   };
 
   return (
@@ -313,7 +313,7 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({
       id="team-carousel-container"
       className={cn(
         embedded
-          ? "min-h-[520px] md:min-h-[620px] flex flex-col items-center justify-start overflow-hidden relative transparent"
+          ? "min-h-[470px] md:min-h-[540px] flex flex-col items-center justify-start overflow-hidden relative transparent"
           : "min-h-screen flex flex-col items-center justify-center overflow-hidden relative transparent",
         className
       )}
@@ -348,7 +348,7 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({
           embedded ? "mt-0" : "mt-5"
         )}
         style={{
-          height: cardHeight + 100,
+          height: cardHeight + 72,
           perspective: '1000px',
         }}
       >
@@ -428,8 +428,8 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({
                         color: infoTextColor,
                       }}
                     >
-                      <h2 className="text-sm font-bold">{member.name}</h2>
-                      <p className="text-sm opacity-90">{member.role}</p>
+                      <h2 className="text-sm font-bold leading-tight">{member.name}</h2>
+                      <p className="text-xs opacity-90">{member.role}</p>
                     </div>
                   )}
                 </motion.div>
@@ -447,26 +447,22 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.3 }}
-          className="text-center mt-10"
+          className="text-center mt-7"
         >
           <h5
-            className="text-4xl font-bold mb-3 relative inline-block"
+            className="text-2xl md:text-[1.65rem] font-bold mb-1 relative inline-block"
             style={{ color: infoTextColor }}
           >
             {members[currentIndex].name}
-            <span
-              className="absolute top-full left-0 w-full h-0.5 mt-2"
-              style={{ background: infoSeparator}}
-            />
           </h5>
           <p
-            className="text-xl font-medium opacity-80 uppercase tracking-wider"
+            className="text-sm md:text-base font-medium opacity-80 uppercase tracking-[0.16em]"
             style={{ color: infoBackgroundColor }}
           >
             {members[currentIndex].role}
           </p>
           {members[currentIndex].bio && (
-            <p className="text-base mt-4 max-w-lg mx-auto opacity-70">
+            <p className="text-xs md:text-sm mt-2 max-w-md mx-auto opacity-70 leading-relaxed">
               {members[currentIndex].bio}
             </p>
           )}
